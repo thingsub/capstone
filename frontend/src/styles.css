@@ -1,0 +1,282 @@
+/* 전체 스타일 기본값 */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; /* 가로 스크롤 방지 */
+  overflow-y: hidden; /* 세로 방향으로 넘치는 콘텐츠 숨기기 */
+}
+
+/* 📌 네비게이션 바 (기본: 가로 정렬) */
+.Nav_bar {
+  display: flex;
+  justify-content: space-around;
+  background-color: #333;
+  padding: 15px;
+  position: relative; /* 상단에 고정되지 않도록 */
+}
+
+.Nav_bar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+/* 📌 네비게이션 바 (작은 화면에서 세로 정렬) */
+@media screen and (max-width: 768px) {
+  .Nav_bar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Nav_bar a {
+    padding: 10px;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* 📌 박스 레이아웃 */
+.Box,
+.Box1,
+.Box2,
+.Box3 {
+  text-align: center;
+  padding: 20px;
+}
+
+/* 📌 프로필 이미지 */
+.profileBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.profile {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+/* 📌 작은 화면에서 프로필 정렬 변경 */
+@media screen and (max-width: 768px) {
+  .profileBox {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* 📌 유튜브 iframe 반응형 */
+.Box3 iframe {
+  width: 80%;
+  height: auto;
+  max-width: 600px;
+  aspect-ratio: 16 / 9;
+}
+
+/* 📌 정보 아이콘 (기본 가로 정렬) */
+.infoBox {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.info img {
+  width: 70px;
+  height: 70px;
+}
+
+/* 📌 작은 화면에서 정보 아이콘 정렬 변경 */
+@media screen and (max-width: 600px) {
+  .infoBox {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* 📌 관심사(이미지) 그리드 (기본 2x2) */
+.favor {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+/* 📌 작은 화면에서 1열 정렬 */
+@media screen and (max-width: 768px) {
+  .favor {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* 📌 이미지 크기 자동 조절 */
+.favor img {
+  width: 100%;
+  height: auto;
+  max-width: 350px;
+}
+
+/* 📌 텍스트 반응형 조절 */
+.Box span,
+.Box1 span {
+  font-size: 1.2em;
+}
+
+/* 📌 작은 화면에서 글자 크기 축소 */
+@media screen and (max-width: 768px) {
+  .Box span,
+  .Box1 span {
+    font-size: 1em;
+  }
+}
+
+.login-container {
+  text-align: center;
+
+  margin-top: 100px;
+}
+
+.social-login {
+  width: 280px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  margin: 10px auto;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.social-login img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+/* 카카오 로그인 */
+.kakao {
+  background-color: #fee500;
+  color: #3c1e1e;
+}
+
+.kakao:hover {
+  background-color: #f2d600;
+  transform: scale(1.02);
+}
+
+/* 구글 로그인 */
+.google {
+  background-color: #ffffff;
+  color: #3c4043;
+  border: 1px solid #dadce0;
+}
+
+.google:hover {
+  background-color: #f8f9fa;
+  transform: scale(1.02);
+}
+
+/* About 페이지 컨테이너 */
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+}
+
+/* 조회 데이터 박스 */
+.about-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* 제목 스타일 */
+.about-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* home-container: 전체 홈 화면 */
+.home-container {
+  position: relative;
+  min-height: 100vh; /* 화면 높이에 맞게 최소 높이 지정 */
+  padding-bottom: 50px; /* 페이지 하단 여백 */
+}
+
+/* background-video: 배경 비디오 */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 비디오 비율을 유지하며 화면 크기에 맞게 조정 */
+  z-index: -1; /* 비디오가 콘텐츠 뒤에 보이도록 설정 */
+}
+
+/* home-content: 콘텐츠 영역 */
+.home-content {
+  position: relative;
+  text-align: center;
+  z-index: 1; /* 콘텐츠가 비디오 위에 보이도록 설정 */
+  color: #fff; /* 텍스트 색상 */
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+}
+
+/* home-title: 타이틀 스타일 */
+.home-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* 타이틀에 그림자 효과 */
+}
+
+/* home-image: 이미지 스타일 */
+.home-image {
+  width: 200px;
+  height: auto;
+  border-radius: 10px; /* 이미지 둥글게 처리 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* 이미지에 그림자 효과 */
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%; /* html 높이 설정 */
+  overflow-y: auto; /* 세로 스크롤 허용 */
+}
+
+/* 각 섹션의 기본 display 및 스크롤 설정 */
+#home-section,
+#about-section,
+#favorite-section,
+#contact-section {
+  display: block; /* 기본적으로 보이도록 설정 */
+  padding: 20px;
+  overflow: auto; /* 스크롤이 가능하도록 설정 */
+  min-height: 100vh; /* 최소 높이를 100vh로 설정 */
+}
